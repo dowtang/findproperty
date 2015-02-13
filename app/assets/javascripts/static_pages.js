@@ -5,18 +5,22 @@ $(document).ready(function(){
 
   function initialize() {
     var singapore = new google.maps.LatLng(1.3146631, 103.8454093);
+    
     map = new google.maps.Map(document.getElementById('map-canvas'), {
       center: singapore,
       zoom: 11
     });
 
     var request = {
-      location: Singapore,
+      location: singapore,
       radius: 8,
       types: ['store']
     };
+
     infowindow = new google.maps.InfoWindow();
+    
     var service = new google.maps.places.PlacesService(map);
+    
     service.nearbySearch(request, callback);
   }
 
@@ -37,6 +41,6 @@ $(document).ready(function(){
     });
   }
 
-google.maps.event.addDomListener(window, 'load', initialize);
+  google.maps.event.addDomListener(window, 'load', initialize);
 
 });
