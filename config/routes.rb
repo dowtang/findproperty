@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -6,6 +7,8 @@ Rails.application.routes.draw do
   root 'static_pages#index'
 
   get '/search' => 'static_pages#search'
+
+  get 'profile' => 'users#show'
 
 
   # Example of regular route:
