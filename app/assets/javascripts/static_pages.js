@@ -30,12 +30,12 @@ $(document).ready(function(){
 
 // Goal: I must bind and setup search control for the map.param: map - the Google map object
 
-var bind_controls = function(mapParam) {
+var bind_controls = function(map) {
   // get the container for the search control and bind and event to it on submit
   var controlContainer = $('#control_container')[0];
   google.maps.event.addDomListener(controlContainer, 'submit', function(e) {
     e.preventDefault();
-    search(mapParam);
+    search(map);
   });
 
   // get the search button and bind a click event to it for searching
