@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Findpropertyapp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Findpropertyapp</title>
+    
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places">
+    </script>
+  
+    <%= csrf_meta_tags %>
+  </head>
+  
+  <body>
 
-<%= yield %>
+  <%= yield %>
 
-</body>
+  </body>
+
 </html>
+
