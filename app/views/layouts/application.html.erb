@@ -2,6 +2,8 @@
 <html>
   <head>
     <title>Findpropertyapp</title>
+
+    <link rel="stylesheet" href="static_pages.css.scss">
     
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -16,6 +18,39 @@
   </head>
   
   <body>
+    <div class="nav">
+      <div class="container">
+        <ul class="pull-left">
+          <li> 
+            <a href="#">
+              888
+            </a>
+          </li>
+          <li> 
+            <a href="#">
+              Browse
+            </a>
+          </li>
+        </ul>
+        <ul class="pull-right">
+          <li>
+            <a href="#">
+              Sign Up
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Log In
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Favorites
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
   <%= yield %>
 
