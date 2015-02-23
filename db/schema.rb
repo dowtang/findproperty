@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150213075428) do
+ActiveRecord::Schema.define(version: 20150223071849) do
+
+  create_table "listings", force: true do |t|
+    t.string   "sn"
+    t.string   "project_name"
+    t.string   "street_name"
+    t.string   "dwelling_type"
+    t.string   "postal_district"
+    t.string   "market_segment"
+    t.string   "tenure"
+    t.string   "number_of_units"
+    t.string   "total_price"
+    t.string   "area_sq"
+    t.string   "type_of_area"
+    t.string   "floor_level"
+    t.string   "price_per_square_foot"
+    t.string   "date_of_sale"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
