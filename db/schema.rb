@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150223044225) do
+ActiveRecord::Schema.define(version: 20150223071849) do
 
   create_table "listings", force: true do |t|
     t.string   "sn"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20150223044225) do
     t.string   "area_sq"
     t.string   "type_of_area"
     t.string   "floor_level"
-    t.string   "ppsf"
+    t.string   "price_per_square_foot"
     t.string   "date_of_sale"
     t.datetime "created_at"
     t.datetime "updated_at"
