@@ -1,7 +1,13 @@
+.nav.header-nav {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: #051195;
+  margin-bottom: 15px;
+}
 
 .nav a {
-  color: #5a5a5a;
-  font-size: 11px;
+  color: white;
+  font-size: 18px;
   font-weight: bold;
   padding: 14px 10px;
   text-transform: uppercase;
@@ -9,4 +15,12 @@
 
 .nav li {
   display: inline;
+}
+
+.pull-left {
+  margin-top: 10px;
+}
+
+.pull-right {
+  margin-top: 10px;
 }

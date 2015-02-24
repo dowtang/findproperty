@@ -4,25 +4,42 @@ html, body {
   padding: 0px;
 }
 
+#smartSearch {
+  margin-top: 0px;
+}
+
+.homePageFilterBreak {
+  height: 15px;
+}
+
+.filterBox {
+  background: #ffbb39;
+  border-radius: 5px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border: solid 2px black;
+  margin: 0 15px 15px 15px;
+
+}
+.result-item {
+  border: solid 2px black;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
 #map-canvas{
-  height: 100%;
+  height: 100vh;
   margin: 0px;
   padding: 0px;
+  border-radius: 5px;
+  border: solid 2px black;
+  /*position: fixed;*/
 }
 
 #frontpage{
   height: 80px;
   background-color: white;
-}
-
-.nav a {
-  color: #5a5a5a;
-  font-size: 11px;
-  font-weight: bold;
-  padding: 14px 10px;
-  text-transform: uppercase;
-}
-
-.nav li {
-  display: inline;
 }
