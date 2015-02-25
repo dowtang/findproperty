@@ -13,7 +13,7 @@ namespace :property_scrape do
 
     (1..2).each do |i|
 
-      url = "http://www.stproperty.sg/property-for-sale/page#{i}"
+      url = "http://www.stproperty.sg/property-for-sale/condo-for-sale/page#{i}"
 
       # document = open(url, 'User-Agent' => user_agent).read
 
@@ -36,7 +36,7 @@ namespace :property_scrape do
         html_doc = Nokogiri::HTML(document)
 
         property_name = "div > div > div > div > h4.title-detail-page"
-        propertyName = html_doc.css(property_name)
+        propertyNames = html_doc.css(property_name)
 
         property_address = ".page-header" 
         propertyAddress = html_doc.css(property_address)
@@ -51,7 +51,7 @@ namespace :property_scrape do
         propertyPicture = html_doc.css(property_picture)
 
         total_beds = "div > div > div > div > span.icon-bed"
-        totalBeds = html_doc.css(total_bed)
+        totalBeds = html_doc.css(total_beds)
 
         total_bathrooms = "div > div > div > div > span.icon-bathroom"
         totalBathrooms = html_doc.css(total_bathrooms)
@@ -67,32 +67,59 @@ namespace :property_scrape do
 
         propertyNames.each_with_index do |propertyName, index|
 
+          if postDate[index] == nil
+            harry = nil
+          else
+            harry = postDate[index].text.to_date
+          end
 
-          # puts "PROPERTY PICTURE: #{propertyPicture}"
-          # puts "______________"
-          # puts index
-          # puts "PROPERTY NAME: #{propertyNames[index]}"
-          # puts "PROPERTY ADDRESS: #{propertyAddresses[index]}"
-          # # puts "PROPERTY POSTAL CODE: #{propertyPostalCodes}"
-          # puts "TOTAL BEDS: #{totalBeds[index]}"
-          # puts "FLOOR AREA: #{floorAreas[index]}"
-          # puts "PROPERTY PRICE: #{propertyPrices[index]}"
+          if propertyTenure[index] == nil
+            paul = nil
+          else
+            paul = propertyTenure[index].text
+          end
 
-        Project.create(
-          :project_name => propertyName,
-          :address => propertyAddresse,
-          :tenure => propertyTenure,
-          :year_contructed => yearConstructed,
-          :picture => "http://www.stproperty.sg/#{propertyPicture.attr("data-src")}"
-        )
+          if yearConstructed[index] == nil
+            mike = nil
+          else
+            mike = yearConstructed[index].text
+          end
 
-        Listing.create(
-          :asking_price => propertyPrice,
-          :posted_on => postDate,
-          :apartment_size => floorArea,
-          :number_of_beds => totalBeds,
-          :number_of_bathrooms => totalBathrooms
-        )
+          if totalBeds[index] == nil
+            clement = nil
+          else
+            clement = totalBeds[index].text
+          end
+
+          if totalBathrooms[index] == nil
+            dennis = nil
+          else
+            dennis = totalBathrooms[index].text
+          end
+
+          street_name = propertyAddress[index].css("a:first-child").text
+          postal_code = propertyAddress[index].text.match(/\d{6}/).to_s
+
+          project_address = street_name + " " + postal_code
+
+          project = Project.create(
+            :project_name => propertyName.text,
+            :address => project_address,
+            :tenure => paul,
+            :year_constructed => mike,
+            :picture_url => "http://www.stproperty.sg/#{propertyPicture[index].attr("data-src")}"
+          )
+
+          listing = Listing.create(
+            :asking_price => propertyPrice[index].text,
+            :posted_on => harry,
+            :apartment_size => floorArea[index].text,
+            :number_of_beds => clement,
+            :number_of_bathrooms => dennis
+          )
+
+          puts project
+          puts listing
 
         end
       end
