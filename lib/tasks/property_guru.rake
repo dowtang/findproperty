@@ -33,12 +33,24 @@ namespace :property_scrape do
 
         urlListing = "http://www.stproperty.sg/#{propertyUrls[index].attr("href")}"
 
-        document = open(url).read
+        document = open(urlListing).read
 
         html_doc = Nokogiri::HTML(document)
 
         property_name = "div > div > div > div > h4.title-detail-page"
         propertyNames = html_doc.css(property_name)
+
+        property_address = ".page-header" 
+        propertyAddresses = html_doc.css(property_address)
+
+        # property_street_name = "div.box-col640.pull-right > div.page-header > h4.title-detail-page > p > a:nth-child(1)" 
+        # propertyStreetNames = html_doc.css(property_street_name)
+
+        # property_postal_code = "div > div > div > h4 > p"
+        # propertyPostalCodes = html_doc.css(property_postal_code)
+
+        total_bed = "div > div > div > div > span.icon-bed"
+        totalBeds = html_doc.css(total_bed)
 
         floor_area = "div.box-col640.pull-right.default-box-detail > div.row > div:nth-child(1).col-xs-6 > div:nth-child(1).row > div:nth-child(2).col-xs-7"
         floorAreas = html_doc.css(floor_area)
@@ -50,7 +62,10 @@ namespace :property_scrape do
 
           puts "______________"
           puts index
-          puts "PROPERTY NAME: #{propertyName}"
+          puts "PROPERTY NAME: #{propertyNames[index]}"
+          puts "PROPERTY ADDRESS: #{propertyAddresses[index]}"
+          # puts "PROPERTY POSTAL CODE: #{propertyPostalCodes}"
+          puts "TOTAL BEDS: #{totalBeds[index]}"
           puts "FLOOR AREA: #{floorAreas[index]}"
           puts "PROPERTY PRICE: #{propertyPrices[index]}"
         end       
@@ -64,7 +79,7 @@ namespace :property_scrape do
 
     # = "http://www.propertyguru.com.sg/singapore-property-listing/property-for-sale/1"
 
-    property_listing_url = "form > ul > li.listing_corp > div.listing_info > a.infotitle.listing_action.clearfix"
+    # property_listing_url = "form > ul > li.listing_corp > div.listing_info > a.infotitle.listing_action.clearfix"
 
     # propertyUrls = html_doc.css(property_listing_url)
 
