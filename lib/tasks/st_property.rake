@@ -11,7 +11,7 @@ namespace :property_scrape do
 
     # user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.854.0 Safari/535.2"
 
-    (1..2).each do |i|
+    (1..2412).each do |i|
 
       url = "http://www.stproperty.sg/property-for-sale/condo-for-sale/page#{i}"
 
