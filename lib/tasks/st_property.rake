@@ -38,36 +38,64 @@ namespace :property_scrape do
         html_doc = Nokogiri::HTML(document)
 
         property_name = "div > div > div > div > h4.title-detail-page"
-        propertyNames = html_doc.css(property_name)
+        propertyName = html_doc.css(property_name)
 
         property_address = ".page-header" 
-        propertyAddresses = html_doc.css(property_address)
+        propertyAddress = html_doc.css(property_address)
 
-        # property_street_name = "div.box-col640.pull-right > div.page-header > h4.title-detail-page > p > a:nth-child(1)" 
-        # propertyStreetNames = html_doc.css(property_street_name)
+        tenure = "div.row > div:nth-child(2).col-xs-6 > div:nth-child(1).row > div:nth-child(2).col-xs-7 > a:nth-child(2)" 
+        propertyTenure = html_doc.css(tenure)
 
-        # property_postal_code = "div > div > div > h4 > p"
-        # propertyPostalCodes = html_doc.css(property_postal_code)
+        year_constructed = "div.box-col640.pull-right.default-box-detail > div.row > div:nth-child(4).col-xs-6 > div:nth-child(1).row > div:nth-child(2).col-xs-7"
+        yearConstructed = html_doc.css(year_constructed)
 
-        total_bed = "div > div > div > div > span.icon-bed"
+        property_picture = "div > div > a > span > img"
+        propertyPicture = html_doc.css(property_picture)
+
+        total_beds = "div > div > div > div > span.icon-bed"
         totalBeds = html_doc.css(total_bed)
 
+        total_bathrooms = "div > div > div > div > span.icon-bathroom"
+        totalBathrooms = html_doc.css(total_bathrooms)
+
+        posted_on = "div.box-col640.pull-right.default-box-detail > div.row > div:nth-child(5).col-xs-6 > div:nth-child(1).row > div:nth-child(2).col-xs-7"
+        postDate = html_doc.css(posted_on)
+
         floor_area = "div.box-col640.pull-right.default-box-detail > div.row > div:nth-child(1).col-xs-6 > div:nth-child(1).row > div:nth-child(2).col-xs-7"
-        floorAreas = html_doc.css(floor_area)
+        floorArea = html_doc.css(floor_area)
 
         property_price = "div > div > div > div > a.detail-lg-link"
-        propertyPrices = html_doc.css(property_price)
+        propertyPrice = html_doc.css(property_price)
 
         propertyNames.each_with_index do |propertyName, index|
 
-          puts "______________"
-          puts index
-          puts "PROPERTY NAME: #{propertyNames[index]}"
-          puts "PROPERTY ADDRESS: #{propertyAddresses[index]}"
-          # puts "PROPERTY POSTAL CODE: #{propertyPostalCodes}"
-          puts "TOTAL BEDS: #{totalBeds[index]}"
-          puts "FLOOR AREA: #{floorAreas[index]}"
-          puts "PROPERTY PRICE: #{propertyPrices[index]}"
+
+          # puts "PROPERTY PICTURE: #{propertyPicture}"
+          # puts "______________"
+          # puts index
+          # puts "PROPERTY NAME: #{propertyNames[index]}"
+          # puts "PROPERTY ADDRESS: #{propertyAddresses[index]}"
+          # # puts "PROPERTY POSTAL CODE: #{propertyPostalCodes}"
+          # puts "TOTAL BEDS: #{totalBeds[index]}"
+          # puts "FLOOR AREA: #{floorAreas[index]}"
+          # puts "PROPERTY PRICE: #{propertyPrices[index]}"
+
+        Project.create(
+          :project_name => propertyName,
+          :address => propertyAddresse,
+          :tenure => propertyTenure,
+          :year_contructed => yearConstructed,
+          :picture => "http://www.stproperty.sg/#{propertyPicture.attr("data-src")}"
+        )
+
+        Listing.create(
+          :asking_price => propertyPrice,
+          :posted_on => postDate,
+          :apartment_size => floorArea,
+          :number_of_beds => totalBeds,
+          :number_of_bathrooms => totalBathrooms
+        )
+
         end       
       end
     end
