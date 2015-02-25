@@ -24,9 +24,7 @@ namespace :property_scrape do
       html_doc = Nokogiri::HTML(document)
   
       property_listing_url = "div.col-xs-8 > div.row > div.col-xs-12 > h4 > a:nth-child(1)"
-      # property_listing_url = ".listing_action"
 
-      #grabbed each of the links on page "i"
       propertyUrls = html_doc.css(property_listing_url)
 
       propertyUrls.each_with_index do |propertyURL, index|
@@ -96,28 +94,9 @@ namespace :property_scrape do
           :number_of_bathrooms => totalBathrooms
         )
 
-        end       
+        end
       end
     end
-
-    # for (var i; i < 2049; i++) {
-    #   var scroll = http://www.propertyguru.com.sg/singapore-property-listing/property-for-sale/#{i};
-    #   console.log(scroll);
-    # } 
-
-    # = "http://www.propertyguru.com.sg/singapore-property-listing/property-for-sale/1"
-
-    # property_listing_url = "form > ul > li.listing_corp > div.listing_info > a.infotitle.listing_action.clearfix"
-
-    # propertyUrls = html_doc.css(property_listing_url)
-
-    # propertyUrls.each_with_index do |propertyURL, index|
-
-    #   puts "-------------------"
-    #   puts index
-    #   puts "Property URL: http://www.propertyguru.com.sg/#{propertyUrls[index].attr("href")}"
-    #   end
-
   end
 end
 
