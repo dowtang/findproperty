@@ -177,7 +177,7 @@ var clearMarkers = function() {
 
   function codeAddress() {
     var geocoder = new google.maps.Geocoder();
-    var address = $('#address').val();
+    var address = $('#address').val() + ", Singapore";
 
     console.log(address);
 
