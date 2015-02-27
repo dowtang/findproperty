@@ -1,27 +1,21 @@
 <div class="nav header-nav">
   <div class="container-fluid">
-    <ul class="pull-left">
-      <li> 
-        <a href="#">
-          888
-        </a>
+    <ul class="pull-left" id="icon-link">
+      <li id="icon">
+        <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
       </li>
-      <li> 
-        <a href="#">
-          Browse
-        </a>
-      </li>
+      <span id="icon-name"> 
+        Pincasa
+      </span>
     </ul>
-    <ul class="pull-right">
+    <ul class="pull-right" id="header-links">
       <li>
-        <a href="#">
-          Sign Up
-        </a>
+        <%= link_to "Sign Up", new_user_registration_path %>
       </li>
       <li>
-        <a href="#">
-          Log In
-        </a>
+        <%= link_to "Log In", new_user_session_path %>
       </li>
       <li>
         <a href="#">

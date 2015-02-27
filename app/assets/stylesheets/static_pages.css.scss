@@ -12,34 +12,118 @@ html, body {
   height: 15px;
 }
 
-.filterBox {
+.row.filter-header {
   background: #ffbb39;
-  border-radius: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-top: solid 2px #D0D0D0;
+  border-left: solid 2px #D0D0D0;
+  border-right: solid 2px #D0D0D0;
+  margin: 0px -14px 0px 0px;
+  font-size: 35px;
+  text-align: center;
+  font-family: Arial;
+}
+
+.row.property-header {
+  background: #ffbb39;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 15px;
+  padding-left: 15px;
+  border-top: solid 2px #D0D0D0;
+  border-left: solid 2px #D0D0D0;
+  border-right: solid 2px #D0D0D0;
+  margin: 0px -14px 0px 0px;
+  font-size: 26px;
+  font-family: Arial;
+}
+
+.row.filterBox {
+  background: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-right: 15px;
   padding-left: 15px;
-  border: solid 2px black;
-  margin: 0 15px 15px 15px;
-
+  border: solid 2px #D0D0D0;
+  margin: 0px -14px 15px 0px;
+  font-size: 25px;
 }
 .result-item {
   border: solid 2px black;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-bottom: 15px;
   padding: 10px;
 }
 
-#map-canvas{
+#map-canvas {
   height: 100vh;
   margin: 0px;
   padding: 0px;
-  border-radius: 5px;
-  border: solid 2px black;
-  /*position: fixed;*/
+  border-radius: 10px;
+  border: solid 2px #D0D0D0;
+  
 }
 
-#frontpage{
+.col-lg-7.main-body-fixed {
+  top: 0px;
+  margin-top: 45px;
+}
+
+.col-lg-5.google-map-fixed {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  margin-top: 145px;
+}
+
+#frontpage {
   height: 80px;
   background-color: white;
+}
+
+.property-listing-position {
+  margin-right: -15px;
+  margin-left: 0px;
+}
+
+.property-listing-box {
+  border: solid 2px black;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.property-listing-header {
+  background-color: #EA42FF;
+  border-bottom: solid 2px black;
+  font-size: 26px;
+}
+
+.property-name {
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.property-address {
+  margin-bottom: 7px;
+}
+
+.glyphicon-heart-empty {
+  float:left;
+}
+
+.district-code {
+  
+}
+
+.input-group-addon.form-control {
+  z-index: 0;
 }
