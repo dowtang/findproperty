@@ -3,12 +3,14 @@
   
   <div class="row">
     
-    <div class="col-lg-7">
+    <div class="col-lg-7 main-body-fixed">
 
+      <div class="row filter-header"> 
+        <div class="col-xs-12 filter-header-text">
+          Minimum Requirements for My Home
+        </div>
+      </div> 
       <div class="row filterBox">
-        <h1 id="smartSearch">
-          Living Needs
-        </h1>
         <div class="col-xs-3">
           <div class="checkbox">
             <label>
@@ -188,14 +190,17 @@
 
       </div>
 
-      <div class="filterBox">
-        <h1 id="smartSearch">
-          Lifestyle
-        </h1>
-
-
+      <div class="row filter-header">
+        <div class="col-xs-12 filter-header-text">
+          Lifestyle - La Dolce Vita!
+        </div>
+      </div>
+      
+      <div class="row filterBox">
+        <div class="col-xs-4">
           <div id="map_search">
             <form>
+              Type of Food:
               <input type="text">
               <a href="#" id="map_search_submit">
                 <span class="glyphicon glyphicon-search">
@@ -203,41 +208,389 @@
               </a>
             </form>
           </div>
-          
-
-        <!-- <div class="input-group">
-          <span class="input-group-addon">
-            <input type="checkbox" aria-label="...">
-          </span>
-            <input type="text" class="form-control" aria-label="...">
-        </div> -->
-
-      </div>
-
-      <div class="filterBox">
-        <h1 id="smartSearch">
-          Culture
-        </h1>
-        <div class="input-group">
-          <span class="input-group-addon">
-            <input type="checkbox" aria-label="...">
-          </span>
-            <input type="text" class="form-control" aria-label="...">
+        </div>
+        <div class="col-xs-4">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Within</span>
+            <input type="text" class="form-control" placeholder="Distance in km" aria-describedby="basic-addon1">
+        </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">of Address:</span>
+            <input type="text" class="form-control" placeholder="Address of property" aria-describedby="basic-addon1">
+        </div>
         </div>
       </div>
 
-      <div class="filterBox">
-        <h1 id="smartSearch">
-          Transportation
-        </h1>
-        <div class="input-group">
-          <span class="input-group-addon">
-            <input type="checkbox" aria-label="...">
-          </span>
-            <input type="text" class="form-control" aria-label="...">
+      <div class="row filter-header">
+        <div class="col-xs-12 filter-header-text">
+          Are you a Culture Vulture?
         </div>
       </div>
+      <div class="row filterBox">
+        <div class="col-xs-4">
+          <div id="map_search">
+            <form>
+              Type of Food:
+              <input type="text">
+              <a href="#" id="map_search_submit">
+                <span class="glyphicon glyphicon-search">
+                </span>
+              </a>
+            </form>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Within</span>
+            <input type="text" class="form-control" placeholder="Distance in km" aria-describedby="basic-addon1">
+        </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">of Address:</span>
+            <input type="text" class="form-control" placeholder="Address of property" aria-describedby="basic-addon1">
+        </div>
+        </div>
+      </div>
+
+      <div class="row property-header">
+        <div class="pull-left">
+          <span class="property-name">
+          Twin Regency
+          </span>
+          <span class="property-address">
+            Jalan Membina, 098765
+          </span>
+        </div>
+        <div class="district-code">
+          District 11
+        </div>
+        <div class="pull-right">
+          <span class="glyphicon glyphicon-heart-empty" aria-hidden="true">
+          </span>
+        </div>
+      </div>
+
+      <div class="row filterBox">
+        <div class="col-xs-4">
+          <div id="map_search">
+            <form>
+              Type of Food:
+              <input type="text">
+              <a href="#" id="map_search_submit">
+                <span class="glyphicon glyphicon-search">
+                </span>
+              </a>
+            </form>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Within</span>
+            <input type="text" class="form-control" placeholder="Distance in km" aria-describedby="basic-addon1">
+        </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">of Address:</span>
+            <input type="text" class="form-control" placeholder="Address of property" aria-describedby="basic-addon1">
+        </div>
+        </div>
+      </div>
+
+      <div class="row filter-header">
+        <div class="col-xs-12 filter-header-text">
+          I need a Ride
+        </div>
+      </div>
+      <div class="row filterBox">
+      </div>
+
+     <!--  
+      <div class="row filterBox">
+        <div class="col-xs-12 property-listing-box">
+          <div class="row property-listing-header">
+            <div class="col-xs-12 property-name">
+            Twin Regency
+            </div>
+            <div class="col-xs-9 property-address">
+              Jalan Membina, 098765
+            </div>
+            <div class="col-xs-2 district-code">
+              District 11
+            </div>
+          </div>
+          <div class="row property-listing-body">
+            <div class="col-xs-6 property-picture">
+            image
+            </div>
+            <div class="col-xs-6">
+              <p>Price: </p>
+              <p>Size: </p>
+              <p>Price Per Square Foot: </p>
+              <p>Tenure: </p>
+            </div>
+          </div>
+        </div>
+      </div> -->
         
+      <div class="row property-listing-position">
+        <!-- <div class="row property-listing-header"> -->
+        <div class="col-xs-12 property-listing-box">
+          <div class="row property-listing-header">
+            <div class="col-xs-12 property-name">
+            Twin Regency
+            </div>
+            <div class="col-xs-9 property-address">
+              Jalan Membina, 098765
+            </div>
+            <div class="col-xs-2 district-code">
+              District 11
+            </div>
+          </div>
+          <div class="row property-listing-body">
+            <div class="col-xs-6 property-picture">
+            image
+            </div>
+            <div class="col-xs-6">
+              <p>Price: </p>
+              <p>Size: </p>
+              <p>Price Per Square Foot: </p>
+              <p>Tenure: </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- <div class="row property-listing-header"> -->
+        <div class="col-xs-12 property-listing-box">
+          <div class="row property-listing-header">
+            <div class="col-xs-12 property-name">
+            Twin Regency
+            </div>
+            <div class="col-xs-9 property-address">
+              Jalan Membina, 098765
+            </div>
+            <div class="col-xs-2 district-code">
+              District 11
+            </div>
+          </div>
+          <div class="row property-listing-body">
+            <div class="col-xs-6 property-picture">
+            image
+            </div>
+            <div class="col-xs-6">
+              <p>Price: </p>
+              <p>Size: </p>
+              <p>Price Per Square Foot: </p>
+              <p>Tenure: </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- <div class="row property-listing-header"> -->
+        <div class="col-xs-12 property-listing-box">
+          <div class="row property-listing-header">
+            <div class="col-xs-12 property-name">
+            Twin Regency
+            </div>
+            <div class="col-xs-9 property-address">
+              Jalan Membina, 098765
+            </div>
+            <div class="col-xs-2 district-code">
+              District 11
+            </div>
+          </div>
+          <div class="row property-listing-body">
+            <div class="col-xs-6 property-picture">
+            image
+            </div>
+            <div class="col-xs-6">
+              <p>Price: </p>
+              <p>Size: </p>
+              <p>Price Per Square Foot: </p>
+              <p>Tenure: </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- <div class="row property-listing-header"> -->
+        <div class="col-xs-12 property-listing-box">
+          <div class="row property-listing-header">
+            <div class="col-xs-12 property-name">
+            Twin Regency
+            </div>
+            <div class="col-xs-9 property-address">
+              Jalan Membina, 098765
+            </div>
+            <div class="col-xs-2 district-code">
+              District 11
+            </div>
+          </div>
+          <div class="row property-listing-body">
+            <div class="col-xs-6 property-picture">
+            image
+            </div>
+            <div class="col-xs-6">
+              <p>Price: </p>
+              <p>Size: </p>
+              <p>Price Per Square Foot: </p>
+              <p>Tenure: </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- <div class="row property-listing-header"> -->
+        <div class="col-xs-12 property-listing-box">
+          <div class="row property-listing-header">
+            <div class="col-xs-12 property-name">
+            Twin Regency
+            </div>
+            <div class="col-xs-9 property-address">
+              Jalan Membina, 098765
+            </div>
+            <div class="col-xs-2 district-code">
+              District 11
+            </div>
+          </div>
+          <div class="row property-listing-body">
+            <div class="col-xs-6 property-picture">
+            image
+            </div>
+            <div class="col-xs-6">
+              <p>Price: </p>
+              <p>Size: </p>
+              <p>Price Per Square Foot: </p>
+              <p>Tenure: </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- <div class="row property-listing-header"> -->
+        <div class="col-xs-12 property-listing-box">
+          <div class="row property-listing-header">
+            <div class="col-xs-12 property-name">
+            Twin Regency
+            </div>
+            <div class="col-xs-9 property-address">
+              Jalan Membina, 098765
+            </div>
+            <div class="col-xs-2 district-code">
+              District 11
+            </div>
+          </div>
+          <div class="row property-listing-body">
+            <div class="col-xs-6 property-picture">
+            image
+            </div>
+            <div class="col-xs-6">
+              <p>Price: </p>
+              <p>Size: </p>
+              <p>Price Per Square Foot: </p>
+              <p>Tenure: </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- <div class="row property-listing-header"> -->
+        <div class="col-xs-12 property-listing-box">
+          <div class="row property-listing-header">
+            <div class="col-xs-12 property-name">
+            Twin Regency
+            </div>
+            <div class="col-xs-9 property-address">
+              Jalan Membina, 098765
+            </div>
+            <div class="col-xs-2 district-code">
+              District 11
+            </div>
+          </div>
+          <div class="row property-listing-body">
+            <div class="col-xs-6 property-picture">
+            image
+            </div>
+            <div class="col-xs-6">
+              <p>Price: </p>
+              <p>Size: </p>
+              <p>Price Per Square Foot: </p>
+              <p>Tenure: </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- <div class="row property-listing-header"> -->
+        <div class="col-xs-12 property-listing-box">
+          <div class="row property-listing-header">
+            <div class="col-xs-12 property-name">
+            Twin Regency
+            </div>
+            <div class="col-xs-9 property-address">
+              Jalan Membina, 098765
+            </div>
+            <div class="col-xs-2 district-code">
+              District 11
+            </div>
+          </div>
+          <div class="row property-listing-body">
+            <div class="col-xs-6 property-picture">
+            image
+            </div>
+            <div class="col-xs-6">
+              <p>Price: </p>
+              <p>Size: </p>
+              <p>Price Per Square Foot: </p>
+              <p>Tenure: </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- <div class="row property-listing-header"> -->
+        <div class="col-xs-12 property-listing-box">
+          <div class="row property-listing-header">
+            <div class="col-xs-12 property-name">
+              <div class="col-xs-3">Property Name:</div>
+              <div class="col-xs-2">Twin Regency</div>
+            </div>
+            <div class="col-xs-9 property-address">
+              Address: Jalan Membina, 098765
+            </div>
+            <div class="col-xs-2 district-code">
+              Postal District: 11
+            </div>
+          </div>
+          <div class="row property-listing-body">
+            <div class="col-xs-6 property-picture">
+            image
+            </div>
+            <div class="col-xs-6">
+              <p>Price: </p>
+              <p>Size: </p>
+              <p>Price Per Square Foot: </p>
+              <p>Tenure: </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
       <div class="result">
         
         <div class="col-md-6">
@@ -276,7 +629,7 @@
 
     </div>
 
-    <div class="col-lg-5">
+    <div class="col-lg-5 google-map-fixed">
       <div id="map-canvas"></div>
 
       <div id="control_container">
