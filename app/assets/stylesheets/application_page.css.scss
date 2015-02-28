@@ -1,12 +1,13 @@
+@import "color";
+
 .body {
   padding-top: 100px;
 }
 
-.nav.header-nav {
+#header {
   padding-top: 20px;
   padding-bottom: 20px;
   background: white;
-  margin-bottom: 15px;
   position: fixed;
   top: 0;
   left: 0;
@@ -15,47 +16,56 @@
   border-bottom: solid 1px #D0D0D0;
 }
 
+.pull-left.vertical-center {
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  margin-bottom: 11px;
+}
+
+.pull-right.vertical-center {
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  margin-bottom: 11px;
+}
+
+.header-links {
+  margin-top: 0px;
+  padding-right: 40px;
+  font-size: 35px;
+  color: black;
+  font-family: Arial;
+  display: inline;
+}
+
+.header-links a {
+  color: $font-color;
+}
+
 #icon {
-  border:solid 8px #8904B1;
+  border:solid 8px #5F04B4;
   border-radius: 10px;
   font-size: 40px;
   font-weight: bold;
   padding: 14px 10px;
-  color: #8904B1;
+  color: #5F04B4;
+  background: #F78181;
 }
 
 #icon-name {
-  color: #8904B1;
-  font-size: 50px;
+  color: #5F04B4;
+  font-size: 35px;
   margin-left: 10px;
   font-family: Arial;
-}
-
-.nav a {
-  font-size: 40px;
-  padding: 14px 10px;
-  font-family: Arial;
-  color: black;
+  display: inline;
 }
 
 .nav li {
   display: inline;
 }
 
-.pull-left {
-  /*margin-top: 10px;*/
-}
 
-.pull-right {
-/*  margin-top: 10px;
-  padding-right: 40px;*/
-}
 
-#icon-link {
-  margin-top: 10px;
-}
-
-#header-links {
-  margin-top: 10px;
-  padding-right: 40px;
-}

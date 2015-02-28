@@ -1,29 +1,40 @@
-<h2>Sign up</h2>
+<div class="col-sm-4 col-sm-offset-4 devise-sign-up sign-up-column-position">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <div class="row" id="sign-up-header-one">  
+    <h2>
+      <span class="free">Free</span> to join. 
+      <span class="free">Free</span> to Browse
+    </h2>
+  </div>
+  <div class="row" id="sign-up-header-two">
+    <h2>Sign up below or join using Facebook</h2>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <div class="field">
+      <%= f.label :password %>
+      <% if @validatable %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up", :class => "btn btn-default submit" %>
+    </div>
+  <% end %>
+</div>
 
 <%= render "devise/shared/links" %>
