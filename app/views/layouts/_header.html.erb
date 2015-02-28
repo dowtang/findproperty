@@ -1,27 +1,44 @@
-<div class="nav header-nav">
-  <div class="container-fluid">
-    <ul class="pull-left" id="icon-link">
-      <li id="icon">
-        <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-      </li>
+<div id="header" class="pincasa-header">
+  <div class="container-fluid regular-header">
+    
+    <ul class="pull-left vertical-center">
+      <%= link_to root_path do %>
+        <span id="icon">
+          <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>
+          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+        </span>
+      <% end %>
       <span id="icon-name"> 
         PinCasa
       </span>
     </ul>
-    <ul class="pull-right" id="header-links">
-      <li>
+    
+    <!-- <div id="icon">
+        <%= link_to root_path do %> 
+          <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>
+          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+        <% end %>
+    </div> -->
+<!--     <ul class="pull-left" id="icon-link">
+      
+      
+    </ul> -->
+    <ul class="pull-right vertical-center">
+      <span class="header-links">
         <%= link_to "Sign Up", new_user_registration_path %>
-      </li>
-      <li>
+      </span>
+      <span class="header-links">
         <%= link_to "Log In", new_user_session_path %>
-      </li>
-      <li>
+      </span>
+      <span class="header-links">
         <a href="#">
           Favorites
         </a>
-      </li>
+      </span>
     </ul>
+    <!-- </div> -->
+  <!-- </div> -->
   </div>
 </div>
