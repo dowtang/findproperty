@@ -4,8 +4,10 @@ class StaticPagesController < ApplicationController
   end
 
   def search
-    parameters = { term: params[:term], limit: 16 }
-    render json: Yelp.client.search('Singapore', parameters)
+    parameters = { term: params[:term], radius_filter: params[:radius_filter], limit: 16 }
+    binding.pry
+    render json: Yelp.client.search(params[:location], parameters)
   end
 
 end
+

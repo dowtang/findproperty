@@ -11,9 +11,14 @@ namespace :property_scrape do
 
     # user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.2 (KHTML, like Gecko) Chrome/15.0.854.0 Safari/535.2"
 
-    (1..2412).each do |i|
+    # (1..2412).each do |i|
 
-      url = "http://www.stproperty.sg/property-for-sale/condo-for-sale/page#{i}"
+    #   url = "http://www.stproperty.sg/property-for-sale/condo-for-sale/page#{i}"
+
+
+    (1..3429).each do |i|
+
+      url = "http://www.stproperty.sg/property-for-sale/condo-for-sale/page#{i}/sort-priority#searchresults"
 
       # document = open(url, 'User-Agent' => user_agent).read
 
@@ -35,11 +40,13 @@ namespace :property_scrape do
 
         html_doc = Nokogiri::HTML(document)
 
-        property_name = "div > div > div > div > h4.title-detail-page"
+        property_name = "div.row > div.col-xs-6 > div:nth-child(1).row > div:nth-child(2).col-xs-6 > a:nth-child(1)"
         propertyNames = html_doc.css(property_name)
 
         property_address = ".page-header" 
         propertyAddress = html_doc.css(property_address)
+
+        district_number = propertyAddress.text.match(/\(\w\d\d\)/).to_s
 
         tenure = "div.row > div:nth-child(2).col-xs-6 > div:nth-child(1).row > div:nth-child(2).col-xs-7 > a:nth-child(2)" 
         propertyTenure = html_doc.css(tenure)
@@ -104,13 +111,13 @@ namespace :property_scrape do
 
           project = Project.create(
             :project_name => propertyName.text,
-            :address => project_address,
+            :district_number => district_number,
             :tenure => paul,
             :year_constructed => mike,
             :picture_url => "http://www.stproperty.sg/#{propertyPicture[index].attr("data-src")}"
           )
 
-          listing = Listing.create(
+          project.listings.create(
             :asking_price => propertyPrice[index].text,
             :posted_on => harry,
             :apartment_size => floorArea[index].text,
@@ -118,8 +125,7 @@ namespace :property_scrape do
             :number_of_bathrooms => dennis
           )
 
-          puts project
-          puts listing
+          puts postal_code
 
         end
       end

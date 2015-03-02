@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150227103048) do
+ActiveRecord::Schema.define(version: 20150302144159) do
 
   create_table "likes", force: true do |t|
     t.datetime "created_at"
@@ -50,6 +50,9 @@ ActiveRecord::Schema.define(version: 20150227103048) do
     t.string   "market_segment"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "district_number"
   end
 
   create_table "users", force: true do |t|

@@ -4,6 +4,580 @@
   <div class="row">
     
     <div class="col-lg-7 main-body-fixed">
+      
+      <%= form_tag('/search', method: 'post') do %>
+        <div class="row">
+          <div class="col-xs-3">
+            <% 28.times do |i| %>
+              <div class="checkbox">
+                <%= check_box_tag("district_" + i.to_s) %>
+                <%= label_tag("district_"+ i.to_s, "district " + i.to_s) %>
+              </div>
+            <% end %>
+          </div>
+          <input type="submit">
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+<!-- 
+      <form>
+        <div class="stick-man">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Home Requirements
+                  </a>
+                </h4>
+              </div>
+              
+              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                  
+                  <div class="row">
+                    <div class="col-xs-3">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 1
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 2 
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 3
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 4
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 5
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 6
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 7
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-xs-3">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 8
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 9
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 10
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 11
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 12
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 13
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 14
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-xs-3">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 15
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 16
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 17
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 18
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 19
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 20
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 21
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-xs-3">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 22
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 23
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 24
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 25
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 26
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 27
+                        </label>
+                      </div>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="">
+                          District 28
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="row slider-space">
+                    <p>
+                      <label class="slider-label" for="amount">Price range (min-max):
+                      </label>
+                      <input type="text" id="amount" readonly readonly style="border:0; color:#f6931f; font-weight:bold">
+                    </p>
+                    <div id="slider-range">
+                    </div>
+                  </div>
+
+                  <div class="row slider-space">
+                    <p>
+                      <label class="slider-label" for="amount">Square foot (min-max):
+                      </label>
+                      <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold">
+                    </p>
+                    <div id="slider-range-square-feet">
+                    </div>
+                  </div>
+
+                  <div class="row submit-row">
+                    <div class="btn-group" role="group" aria-label="...">
+                      <button type="button" class="btn btn-default search-button">Search       
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Lifestyle Filter
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                  <div class="col-xs-4">
+                    <div id="map_search">
+                      <form>
+                        Type of Food:
+                        <input type="string">
+                        <a href="#" id="map_search_submit">
+                          <span class="glyphicon glyphicon-search">
+                          </span>
+                        </a>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="col-xs-4">
+                    <div id="radius_search">
+                      <form>
+                        Maximum Distance:
+                        <input type="number">
+                      </form>
+                    </div>
+                  </div>
+                  <div class="col-xs-4">
+                    <div id="point_of_interest_search">
+                      <form>
+                         From:
+                        <input type="string">
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>        
+        </div>
+      </form>
+      
+
+      <div class="stick-man">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Home Requirements
+                </a>
+              </h4>
+            </div>
+            
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                
+                <div class="row">
+                  <div class="col-xs-3">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 1
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 2 
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 3
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 4
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 5
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 6
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 7
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-xs-3">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 8
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 9
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 10
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 11
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 12
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 13
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 14
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-xs-3">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 15
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 16
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 17
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 18
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 19
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 20
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 21
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-xs-3">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 22
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 23
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 24
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 25
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 26
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 27
+                      </label>
+                    </div>
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox" value="">
+                        District 28
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="row slider-space">
+                  <p>
+                    <label class="slider-label" for="amount">Price range (min-max):
+                    </label>
+                    <input type="text" id="amount" readonly readonly style="border:0; color:#f6931f; font-weight:bold">
+                  </p>
+                  <div id="slider-range">
+                  </div>
+                </div>
+
+                <div class="row slider-space">
+                  <p>
+                    <label class="slider-label" for="amount">Square foot (min-max):
+                    </label>
+                    <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold">
+                  </p>
+                  <div id="slider-range-square-feet">
+                  </div>
+                </div>
+
+                <div class="row submit-row">
+                  <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default search-button">Search       
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+              <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Lifestyle Filter
+                </a>
+              </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+              <div class="panel-body">
+                <div class="col-xs-4">
+                  <div id="map_search">
+                    <form>
+                      Type of Food:
+                      <input type="string">
+                      <a href="#" id="map_search_submit">
+                        <span class="glyphicon glyphicon-search">
+                        </span>
+                      </a>
+                    </form>
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <div id="radius_search">
+                    <form>
+                      Maximum Distance:
+                      <input type="number">
+                    </form>
+                  </div>
+                </div>
+                <div class="col-xs-4">
+                  <div id="point_of_interest_search">
+                    <form>
+                       From:
+                      <input type="string">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingThree">
+              <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Family Filter
+                </a>
+              </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+              <div class="panel-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
 
       <div class="row filter-header"> 
         <div class="col-xs-12 filter-header-text">
@@ -197,18 +771,37 @@
       </div>
       
       <div class="row filterBox">
-        <div class="col-xs-4">
-          <div id="map_search">
-            <form>
-              Type of Food:
-              <input type="text">
-              <a href="#" id="map_search_submit">
-                <span class="glyphicon glyphicon-search">
-                </span>
-              </a>
-            </form>
-          </div>
-        </div>
+<div class="col-xs-4">
+  <div id="map_search">
+    <form>
+      Type of Food:
+      <input type="string">
+      <a href="#" id="map_search_submit">
+        <span class="glyphicon glyphicon-search">
+        </span>
+      </a>
+    </form>
+  </div>
+</div>
+<div class="col-xs-4">
+  <div id="radius_search">
+    <form>
+      Maximum Distance:
+      <input type="number">
+    </form>
+  </div>
+</div>
+<div class="col-xs-4">
+  <div id="point_of_interest_search">
+    <form>
+       From:
+      <input type="string">
+    </form>
+  </div>
+</div>
+      </div>
+
+
         <div class="col-xs-4">
           <div class="input-group">
             <span class="input-group-addon" id="basic-addon1">Within</span>
@@ -221,7 +814,6 @@
             <input type="text" class="form-control" placeholder="Address of property" aria-describedby="basic-addon1">
         </div>
         </div>
-      </div>
 
       <div class="row filter-header">
         <div class="col-xs-12 filter-header-text">
@@ -242,19 +834,20 @@
           </div>
         </div>
         <div class="col-xs-4">
-          <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">Within</span>
-            <input type="text" class="form-control" placeholder="Distance in km" aria-describedby="basic-addon1">
-        </div>
+          <div id="radius_search">
+            <form>
+              Maximum Distance:
+              <input type="text">
+            </form>
+          </div>
         </div>
         <div class="col-xs-4">
-          <div class="input-group">
-            <!-- <span class="input-group-addon" id="basic-addon1">of Address:</span> -->
-            <input id="address" type="textbox" value="Singapore">
-            <span>
-              <input type="button" value="Geocode" id="geocode_submit">
-            </span>
-        </div>
+          <div id="point_of_interest_search">
+            <form>
+               From:
+              <input type="text">
+            </form>
+          </div>
         </div>
       </div>
 
@@ -289,331 +882,7 @@
           </div>
         </div>
       </div>
-
-      <div class="row filter-header">
-        <div class="col-xs-12 filter-header-text">
-          I need a Ride
-        </div>
-      </div>
-      <div class="row filterBox">
-      </div>
-
-     <!--  
-      <div class="row filterBox">
-        <div class="col-xs-12 property-listing-box">
-          <div class="row property-listing-header">
-            <div class="col-xs-12 property-name">
-            Twin Regency
-            </div>
-            <div class="col-xs-9 property-address">
-              Jalan Membina, 098765
-            </div>
-            <div class="col-xs-2 district-code">
-              District 11
-            </div>
-          </div>
-          <div class="row property-listing-body">
-            <div class="col-xs-6 property-picture">
-            image
-            </div>
-            <div class="col-xs-6">
-              <p>Price: </p>
-              <p>Size: </p>
-              <p>Price Per Square Foot: </p>
-              <p>Tenure: </p>
-            </div>
-          </div>
-        </div>
-      </div> -->
-        
-      <div class="row property-listing-position">
-        <!-- <div class="row property-listing-header"> -->
-        <div class="col-xs-12 property-listing-box">
-          <div class="row property-listing-header">
-            <div class="col-xs-12 property-name">
-            Twin Regency
-            </div>
-            <div class="col-xs-9 property-address">
-              Jalan Membina, 098765
-            </div>
-            <div class="col-xs-2 district-code">
-              District 11
-            </div>
-          </div>
-          <div class="row property-listing-body">
-            <div class="col-xs-6 property-picture">
-            image
-            </div>
-            <div class="col-xs-6">
-              <p>Price: </p>
-              <p>Size: </p>
-              <p>Price Per Square Foot: </p>
-              <p>Tenure: </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <!-- <div class="row property-listing-header"> -->
-        <div class="col-xs-12 property-listing-box">
-          <div class="row property-listing-header">
-            <div class="col-xs-12 property-name">
-            Twin Regency
-            </div>
-            <div class="col-xs-9 property-address">
-              Jalan Membina, 098765
-            </div>
-            <div class="col-xs-2 district-code">
-              District 11
-            </div>
-          </div>
-          <div class="row property-listing-body">
-            <div class="col-xs-6 property-picture">
-            image
-            </div>
-            <div class="col-xs-6">
-              <p>Price: </p>
-              <p>Size: </p>
-              <p>Price Per Square Foot: </p>
-              <p>Tenure: </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <!-- <div class="row property-listing-header"> -->
-        <div class="col-xs-12 property-listing-box">
-          <div class="row property-listing-header">
-            <div class="col-xs-12 property-name">
-            Twin Regency
-            </div>
-            <div class="col-xs-9 property-address">
-              Jalan Membina, 098765
-            </div>
-            <div class="col-xs-2 district-code">
-              District 11
-            </div>
-          </div>
-          <div class="row property-listing-body">
-            <div class="col-xs-6 property-picture">
-            image
-            </div>
-            <div class="col-xs-6">
-              <p>Price: </p>
-              <p>Size: </p>
-              <p>Price Per Square Foot: </p>
-              <p>Tenure: </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <!-- <div class="row property-listing-header"> -->
-        <div class="col-xs-12 property-listing-box">
-          <div class="row property-listing-header">
-            <div class="col-xs-12 property-name">
-            Twin Regency
-            </div>
-            <div class="col-xs-9 property-address">
-              Jalan Membina, 098765
-            </div>
-            <div class="col-xs-2 district-code">
-              District 11
-            </div>
-          </div>
-          <div class="row property-listing-body">
-            <div class="col-xs-6 property-picture">
-            image
-            </div>
-            <div class="col-xs-6">
-              <p>Price: </p>
-              <p>Size: </p>
-              <p>Price Per Square Foot: </p>
-              <p>Tenure: </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <!-- <div class="row property-listing-header"> -->
-        <div class="col-xs-12 property-listing-box">
-          <div class="row property-listing-header">
-            <div class="col-xs-12 property-name">
-            Twin Regency
-            </div>
-            <div class="col-xs-9 property-address">
-              Jalan Membina, 098765
-            </div>
-            <div class="col-xs-2 district-code">
-              District 11
-            </div>
-          </div>
-          <div class="row property-listing-body">
-            <div class="col-xs-6 property-picture">
-            image
-            </div>
-            <div class="col-xs-6">
-              <p>Price: </p>
-              <p>Size: </p>
-              <p>Price Per Square Foot: </p>
-              <p>Tenure: </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <!-- <div class="row property-listing-header"> -->
-        <div class="col-xs-12 property-listing-box">
-          <div class="row property-listing-header">
-            <div class="col-xs-12 property-name">
-            Twin Regency
-            </div>
-            <div class="col-xs-9 property-address">
-              Jalan Membina, 098765
-            </div>
-            <div class="col-xs-2 district-code">
-              District 11
-            </div>
-          </div>
-          <div class="row property-listing-body">
-            <div class="col-xs-6 property-picture">
-            image
-            </div>
-            <div class="col-xs-6">
-              <p>Price: </p>
-              <p>Size: </p>
-              <p>Price Per Square Foot: </p>
-              <p>Tenure: </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <!-- <div class="row property-listing-header"> -->
-        <div class="col-xs-12 property-listing-box">
-          <div class="row property-listing-header">
-            <div class="col-xs-12 property-name">
-            Twin Regency
-            </div>
-            <div class="col-xs-9 property-address">
-              Jalan Membina, 098765
-            </div>
-            <div class="col-xs-2 district-code">
-              District 11
-            </div>
-          </div>
-          <div class="row property-listing-body">
-            <div class="col-xs-6 property-picture">
-            image
-            </div>
-            <div class="col-xs-6">
-              <p>Price: </p>
-              <p>Size: </p>
-              <p>Price Per Square Foot: </p>
-              <p>Tenure: </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <!-- <div class="row property-listing-header"> -->
-        <div class="col-xs-12 property-listing-box">
-          <div class="row property-listing-header">
-            <div class="col-xs-12 property-name">
-            Twin Regency
-            </div>
-            <div class="col-xs-9 property-address">
-              Jalan Membina, 098765
-            </div>
-            <div class="col-xs-2 district-code">
-              District 11
-            </div>
-          </div>
-          <div class="row property-listing-body">
-            <div class="col-xs-6 property-picture">
-            image
-            </div>
-            <div class="col-xs-6">
-              <p>Price: </p>
-              <p>Size: </p>
-              <p>Price Per Square Foot: </p>
-              <p>Tenure: </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <!-- <div class="row property-listing-header"> -->
-        <div class="col-xs-12 property-listing-box">
-          <div class="row property-listing-header">
-            <div class="col-xs-12 property-name">
-              <div class="col-xs-3">Property Name:</div>
-              <div class="col-xs-2">Twin Regency</div>
-            </div>
-            <div class="col-xs-9 property-address">
-              Address: Jalan Membina, 098765
-            </div>
-            <div class="col-xs-2 district-code">
-              Postal District: 11
-            </div>
-          </div>
-          <div class="row property-listing-body">
-            <div class="col-xs-6 property-picture">
-            image
-            </div>
-            <div class="col-xs-6">
-              <p>Price: </p>
-              <p>Size: </p>
-              <p>Price Per Square Foot: </p>
-              <p>Tenure: </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-      <div class="result">
-        
-        <div class="col-md-6">
-          <div class="result-item">
-            <div class="caption">
-              <h3>Thumbnail label</h3>
-              <p>...</p>
-              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="result-item">
-            <div class="caption">
-              <h3>Thumbnail label</h3>
-              <p>...</p>
-              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-            </div>
-          </div>
-        </div>
-         
-        <div class="col-md-6"> 
-          <div class="result-item">
-            <div class="caption">
-              <h3>Thumbnail label</h3>
-              <p>...</p>
-              <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    
     </div>
 
     <div class="col-lg-5 google-map-fixed">
@@ -621,13 +890,13 @@
 
       <div id="control_container">
         <div id="map_search">
-          <!-- <form>
+          <form>
             <input type="text">
             <a href="#" id="map_search_submit">
               <span class="glyphicon glyphicon-search">
               </span>
             </a>
-          </form> -->
+          </form>
         </div>
         <div class="attribution">
         <p>powered by Yelp</p>
@@ -640,3 +909,4 @@
   
   </div>
 </div>
+ -->

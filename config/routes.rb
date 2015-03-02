@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static_pages#index'
 
-  get '/search' => 'static_pages#search'
+  post '/search' => 'static_pages#search'
 
   get 'profile' => 'users#show'
 
