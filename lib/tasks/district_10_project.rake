@@ -1,9 +1,9 @@
-namespace :property_scrape do
+namespace :ten_scrape do
   # this is a description of your task
   desc "Task Description Here"
 
   # this is your task function
-  task :guru_scrape => :environment do
+  task :project_scrape => :environment do
     # do something
   
     require 'open-uri'
@@ -16,9 +16,9 @@ namespace :property_scrape do
     #   url = "http://www.stproperty.sg/property-for-sale/condo-for-sale/page#{i}"
 
 
-    (1..3429).each do |i|
+    (1..50).each do |i|
 
-      url = "http://www.stproperty.sg/property-for-sale/condo-for-sale/page#{i}/sort-priority#searchresults"
+      url = "http://www.stproperty.sg/property-for-sale/district-tanglin-road-farrer-holland-bukit-timah-ardmore-d10/max-selling-price-50000000/max-floor-10000/min-bedroom-0/max-bedroom-10/max-psf-5000/from-sg/page#{i}/sort-priority/size-50"
 
       # document = open(url, 'User-Agent' => user_agent).read
 
@@ -54,8 +54,8 @@ namespace :property_scrape do
         year_constructed = "div.box-col640.pull-right.default-box-detail > div.row > div:nth-child(4).col-xs-6 > div:nth-child(1).row > div:nth-child(2).col-xs-7"
         yearConstructed = html_doc.css(year_constructed)
 
-        property_picture = "div > div > a > span > img"
-        propertyPicture = html_doc.css(property_picture)
+        # property_picture = "div > div > a > span > img"
+        # propertyPicture = html_doc.css(property_picture)
 
         total_beds = "div > div > div > div > span.icon-bed"
         totalBeds = html_doc.css(total_beds)
@@ -113,8 +113,8 @@ namespace :property_scrape do
             :project_name => propertyName.text,
             :district_number => district_number,
             :tenure => paul,
-            :year_constructed => mike,
-            :picture_url => "http://www.stproperty.sg/#{propertyPicture[index].attr("data-src")}"
+            :year_constructed => mike
+            # :picture_url => "http://www.stproperty.sg/#{propertyPicture[index].attr("data-src")}"
           )
 
           project.listings.create(

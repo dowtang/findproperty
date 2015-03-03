@@ -5,9 +5,9 @@
 }
 
 #header {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: #6DCCAD;
   position: fixed;
   top: 0;
   left: 0;
@@ -35,29 +35,30 @@
 .header-links {
   margin-top: 0px;
   padding-right: 40px;
-  font-size: 35px;
-  color: black;
+  font-size: 20px;
+  color: white;
   font-family: Arial;
   display: inline;
 }
 
 .header-links a {
-  color: $font-color;
+  color: white;
 }
 
 #icon {
-  border:solid 8px #5F04B4;
+  /*border:solid 2px #68049E;*/
+  border:solid 3px white;
   border-radius: 10px;
-  font-size: 40px;
+  font-size: 16px;
   font-weight: bold;
-  padding: 14px 10px;
-  color: #5F04B4;
-  background: #F78181;
+  padding: 7px 5px;
+  color: white;
+  background: #68559E;
 }
 
 #icon-name {
-  color: #5F04B4;
-  font-size: 35px;
+  color: white;
+  font-size: 20px;
   margin-left: 10px;
   font-family: Arial;
   display: inline;

@@ -28,7 +28,8 @@ task :make_companies => :environment do
         :area_sq => row["area_sq"], 
         :type_of_area => row["type_of_area"], 
         :floor_level => row["floor_level"], 
-        :price_per_square_foot => row["ppsf"], 
+        :price_per_square_foot => row["ppsf"],
+        :postal_district => row["postal_district"], 
         :date_of_sale => row["date_of_sale"] 
       )
   end

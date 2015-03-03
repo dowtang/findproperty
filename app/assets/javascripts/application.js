@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require jq-sticky-anything.min
 //= require turbolinks
+//= require bootstrap
 //= require_tree .

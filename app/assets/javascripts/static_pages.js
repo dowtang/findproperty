@@ -51,7 +51,9 @@ var bind_controls = function(map) {
 
 var search = function(map) {
   // Grab search term
-  var searchTerm = $('#map_search input[type=text]').val();
+  var searchTerm = $('#map_search input[type=string]').val();
+  var radius_filter = $('#radius_search input[type=number]').val();
+  var location = $('#point_of_interest_search input[type=string]').val();
 
   if (busy === true) { return };
 
@@ -65,7 +67,7 @@ var search = function(map) {
   // url = '/search ? label = value'
   // url = '/search ? name = harry'
   
-  var url = '/search?term='+searchTerm;
+  var url = '/search?term='+searchTerm+"&radius_filter="+radius_filter+"&location="+location;
   // Send a GET rquest with the URL
   $.get(url, function(data) {
     busy = true;
@@ -198,11 +200,11 @@ var clearMarkers = function() {
     });
   }
 
-  var controlContainer = $('#geocode_submit')[0];
-  google.maps.event.addDomListener(controlContainer, 'click', function(e) {
-    console.log("button clicked");
-    codeAddress();
-  });
+  // var controlContainer = $('#geocode_submit')[0];
+  // google.maps.event.addDomListener(controlContainer, 'click', function(e) {
+  //   console.log("button clicked");
+  //   codeAddress();
+  // });
 
   google.maps.event.addDomListener(window, 'load', initialize);
 
