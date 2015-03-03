@@ -55,20 +55,23 @@ $(document).ready(function(){
     // console.log('minFootage', $( "#slider-range-square-feet" ).slider( "values", 0 ));
     // console.log('maxFootage', $( "#slider-range-square-feet" ).slider( "values", 1 ));
 
-    // var bedroom = "";
-    // var selectedBedroom = $("#min")
+    var minBedroom = $("#min-bed :selected").text();
+    var maxBedroom = $("#max-bed :selected").text();
+
 
     // store them in 7 variables
-    var minBedrooms = 1;
-    var maxBedrooms = 4;
+    // var minBedrooms = 1;
+    // var maxBedrooms = 4;
 
 
     // generate the query url, by concatenating all the params
     url = "/listing-search";
     url += "?minPrice=" + minPrice;
     url += "&maxPrice=" + maxPrice;
-    url += "?minFootage=" + minFootage;
+    url += "&minFootage=" + minFootage;
     url += "&maxFootage=" + maxFootage;
+    url += "&minBedroom=" + minBedroom;
+    url += "&maxBedroom=" + maxBedroom;
     if (selectedDistrict.length > 0) {
       district = selectedDistrict.val();
       url += "&district=" + district;
@@ -82,17 +85,13 @@ $(document).ready(function(){
     // do the ajax (get) request
     $.get(url, function(data) {
       // receive data in response --> will be an array
-      console.log(data);
+      // 
+      for (var i=0; i < data.length; i++) {
 
-      
-      // clear the list of results: .html('')
-      
-      // for each elemetn in the array, loop and APPEND to the list of results!
-        // LOOP
-        var searchItem = '<div class="result">' +
+        var searchTerm = '<div class="result">' +
             '<div class="row property-header">' +
               '<div class="col-xs-8">' +
-                '<span class="property-name">Twin Regency</span>' +  // VALUE HERE
+                '<span class="property-name">Twin Regency</span>' + 
                 '<span class="property-address">Jalan Membina, 098765 </span>' +  // VALUE HERE
               '</div>' +
               '<div class="col-xs-2 district-code">' +
@@ -108,17 +107,47 @@ $(document).ready(function(){
                 'image' +  // ACTUAL PICTURE HERE
                 '</div>' +
                 '<div class="col-xs-6">' +
-                  '<p>Price: </p>' +  // VALUE HERE
-                  '<p>Size: </p>' +  // VALUE HERE
+                  '<p>Price: </p>' + 
+                  '<p>Size: </p>' + data[i].apartment_size +
                   '<p>Price Per Square Foot: </p>' +  // VALUE HERE
                   '<p>Tenure: </p>' +  // VALUE HERE
                 '</div>' +
               '</div>' +
             '</div>' +
-          '</div>';
+          '</div>'
+          
+        $(searchTerm).appendTo("#search-results")  
 
-    });
+        // console.log(searchTerm);
 
+        console.log(data[i]);
+        
+    
+      // for (var i in data) {
+      //   console.log(i);
+      // };
+      
+      // clear the list of results: .html('')
+
+      
+      // for each element in the array, loop and APPEND to the list of results!
+        // LOOP
+        // var parsed = "";
+        // var 
+        // for (var 
+
+
+        //   var i=0; i <= data.length; i++) {
+        //   console.log(data);
+        // }
+
+
+        
+
+    };
+
+
+  });
 
   });
 
