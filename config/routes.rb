@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   get '/search' => 'static_pages#search'
 
+  get '/listing-search' => 'listings#search'
+
+
+
   get 'profile' => 'users#show'
 
 

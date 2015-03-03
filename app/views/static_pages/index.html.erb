@@ -21,14 +21,14 @@
             <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
               <div class="panel-body">
                 
-                <div class="row">
+                <div id="district-param" class="row">
 
                   <!-- loop thru @district -->
                   <% @district.each do |i| %>
                     <div class="col-xs-3">
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox" value="<%= i %>">
+                          <input type="radio" value="<%= i %>" name="district">
                           District <%= i %> 
                         </label>
                       </div>
@@ -51,7 +51,7 @@
                   <p>
                     <label class="slider-label" for="amount">Square foot (min-max):
                     </label>
-                    <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold">
+                    <input type="text" id="amount-space" readonly style="border:0; color:#f6931f; font-weight:bold">
                   </p>
                   <div id="slider-range-square-feet">
                   </div>
@@ -59,7 +59,7 @@
 
                 <div>
                   <p id="number-of-beds">Number of bedrooms:</p>
-                  <select class="form-control room-number">
+                  <select id="min-bed" class="form-control room-number">
                     
                     <option>Min</option>
                     <!-- loop thru @bedrooms -->
@@ -68,9 +68,9 @@
                     <% end %>
 
                   </select>
-                  <select class="form-control room-number">
+                  <select id="max-bed" class="form-control room-number">
                     
-                    <option>Min</option>
+                    <option>Max</option>
                     <!-- loop thru @bedrooms -->
                     <% @bedroom.each do |i| %>
                       <option><%= i %></option>
@@ -81,9 +81,9 @@
                 </div>
                 
                 <div class="btn-group" role="group" aria-label="Search">
-                  <button type="button" class="btn btn-default search-button">Search</button>
+                  <button type="button" class="btn btn-default search-button" id="search-button">Show Listings</button>
                 </div>
-
+                
               </div>
             </div>
 
