@@ -4,27 +4,7 @@
   <div class="row">
     
     <div class="col-lg-7 main-body-fixed">
-      
-      <%= form_tag('/search', method: 'post') do %>
-        <div class="row">
-          <div class="col-xs-3">
-            <% 28.times do |i| %>
-              <div class="checkbox">
-                <%= check_box_tag("district_" + i.to_s) %>
-                <%= label_tag("district_"+ i.to_s, "district " + i.to_s) %>
-              </div>
-            <% end %>
-          </div>
-          <input type="submit">
-        </div>
-      <% end %>
 
-    </div>
-  </div>
-</div>
-
-<!-- 
-      <form>
         <div class="stick-man">
           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default">
@@ -238,11 +218,61 @@
                     </div>
                   </div>
 
-                  <div class="row submit-row">
-                    <div class="btn-group" role="group" aria-label="...">
+                  <div>
+                    <p id="number-of-beds">Number of bedrooms:</p> 
+                    <span class="dropdown">
+                      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                        Min
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation">
+                          <a role="menuitem" tabindex="-1" href="#">Action
+                          </a>
+                        </li>
+                        <li role="presentation">
+                          <a role="menuitem" tabindex="-1" href="#">Another action
+                          </a>
+                        </li>
+                        <li role="presentation">
+                          <a role="menuitem" tabindex="-1" href="#">Something else here
+                          </a>
+                        </li>
+                        <li role="presentation">
+                          <a role="menuitem" tabindex="-1" href="#">Separated link
+                          </a>
+                        </li>
+                      </ul>
+                    </span>
+                    <span class="dropdown">
+                      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                        Max
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation">
+                          <a role="menuitem" tabindex="-1" href="#">Action
+                          </a>
+                        </li>
+                        <li role="presentation">
+                          <a role="menuitem" tabindex="-1" href="#">Another action
+                          </a>
+                        </li>
+                        <li role="presentation">
+                          <a role="menuitem" tabindex="-1" href="#">Something else here
+                          </a>
+                        </li>
+                        <li role="presentation">
+                          <a role="menuitem" tabindex="-1" href="#">Separated link
+                          </a>
+                        </li>
+                      </ul>
+                    </span>
+                  </div>
+                  
+                  <div class="btn-group" role="group" aria-label="...">
                       <button type="button" class="btn btn-default search-button">Search       
                       </button>
-                    </div>
                   </div>
 
                 </div>
@@ -909,4 +939,3 @@
   
   </div>
 </div>
- -->
