@@ -36,12 +36,6 @@ namespace :property_scrape do
         
       #   puts final_address
 
-        # Condo.create(
-        #   :condoname => condoNames.text,
-        #   :condoaddress => final_address
-        # )
-
-
       # end
     end
   end

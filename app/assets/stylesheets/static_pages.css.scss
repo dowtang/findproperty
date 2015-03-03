@@ -173,3 +173,14 @@ html, body {
 .input-group-addon.form-control {
   z-index: 0;
 }
+
+.panel-body .checkbox {
+  margin-top: 0;
+  margin-bottom: 7px;
+}
+
+select.room-number {
+  width: 100px;
+  margin-right: 30px;
+  display: inline-block;
+}

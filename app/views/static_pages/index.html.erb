@@ -1,0 +1,195 @@
+<div class="container-fluid">
+  
+  <div class="row">
+    
+    <!-- <div class="col-lg-7 main-body-fixed"> -->
+    <div class="col-lg-7">
+
+        <!-- ACCORDION -->
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          
+          <!-- ACCORDION: PANEL 1 -->
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Home Requirements
+                </a>
+              </h4>
+            </div>
+            
+            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+              <div class="panel-body">
+                
+                <div class="row">
+
+                  <!-- loop thru @district -->
+                  <% @district.each do |i| %>
+                    <div class="col-xs-3">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="<%= i %>">
+                          District <%= i %> 
+                        </label>
+                      </div>
+                    </div>
+                  <% end %>
+
+                </div>
+                
+                <div class="slider-space">
+                  <p>
+                    <label class="slider-label" for="amount">Price range (min-max):
+                    </label>
+                    <input type="text" id="amount" readonly readonly style="border:0; color:#f6931f; font-weight:bold">
+                  </p>
+                  <div id="slider-range">
+                  </div>
+                </div>
+
+                <div class="slider-space">
+                  <p>
+                    <label class="slider-label" for="amount">Square foot (min-max):
+                    </label>
+                    <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold">
+                  </p>
+                  <div id="slider-range-square-feet">
+                  </div>
+                </div>
+
+                <div>
+                  <p id="number-of-beds">Number of bedrooms:</p>
+                  <select class="form-control room-number">
+                    
+                    <option>Min</option>
+                    <!-- loop thru @bedrooms -->
+                    <% @bedroom.each do |i| %>
+                      <option><%= i %></option>
+                    <% end %>
+
+                  </select>
+                  <select class="form-control room-number">
+                    
+                    <option>Min</option>
+                    <!-- loop thru @bedrooms -->
+                    <% @bedroom.each do |i| %>
+                      <option><%= i %></option>
+                    <% end %>
+
+                  </select>
+
+                </div>
+                
+                <div class="btn-group" role="group" aria-label="Search">
+                  <button type="button" class="btn btn-default search-button">Search</button>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- ACCORDION: PANEL 2 -->
+          <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingTwo">
+              <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Lifestyle Filter
+                </a>
+              </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+              <div class="panel-body">
+                <div class="col-xs-3">
+                  <div id="map_search">
+                    Type of Food:
+                    <input type="string">
+                  </div>
+                </div>
+                <div class="col-xs-3">
+                  <div id="radius_search">
+                    Maximum Distance:
+                    <input type="number">
+                  </div>
+                </div>
+                <div class="col-xs-3">
+                  <div id="point_of_interest_search">
+                     From:
+                    <input type="string">
+                  </div>
+                </div>
+                <div class="col-xs-3">
+                  <a href="#" id="map_search_submit">
+                    <br>
+                    <span class="glyphicon glyphicon-search">
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RESULTS -->
+
+        <div id="search-results">
+          <!-- loop through the list of results -->
+          <div class="result">
+            <div class="row property-header">
+              <div class="col-xs-8">
+                <span class="property-name">Twin Regency</span>
+                <span class="property-address">Jalan Membina, 098765 </span>
+              </div>
+              <div class="col-xs-2 district-code">
+                District 11
+              </div>
+              <div class="col-xs-2">
+                <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+              </div>
+            </div>
+
+            <div class="row filterBox">
+              <div class="row property-listing-body">
+                <div class="col-xs-6 property-picture">
+                image
+                </div>
+                <div class="col-xs-6">
+                  <p>Price: </p>
+                  <p>Size: </p>
+                  <p>Price Per Square Foot: </p>
+                  <p>Tenure: </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end of loop -->
+        </div>
+
+    </div>
+
+    <div class="col-lg-5 google-map-fixed">
+      <div id="map-canvas">
+      </div>
+
+      <div id="control_container">
+        <div id="map_search">
+          <form>
+            <input type="text">
+            <a href="#" id="map_search_submit">
+              <span class="glyphicon glyphicon-search">
+              </span>
+            </a>
+          </form>
+        </div>
+        <div class="attribution">
+          <p>powered by Yelp</p>
+        </div>
+        <div id="results">
+        </div>
+      </div>
+    
+    </div>
+  
+  </div>
+</div>
