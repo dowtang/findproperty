@@ -9,7 +9,7 @@ class CreateListings < ActiveRecord::Migration
       t.decimal :price_per_square_foot
       t.string :date_of_sale
 
-      t.decimal :asking_price
+      t.integer :asking_price
       t.date    :posted_on
       t.integer :apartment_size
       t.integer :number_of_beds

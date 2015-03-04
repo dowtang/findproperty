@@ -84,19 +84,26 @@ $(document).ready(function(){
 
     // do the ajax (get) request
     $.get(url, function(data) {
+      var listings = data.listings;
+      console.log(data.listings);
       // receive data in response --> will be an array
       // 
-      for (var i=0; i < data.length; i++) {
+      // clear the list of results: .html('')
+      $('#search-results').html('');
+
+      // append each listing at the end of the result div
+      
+      for (var i=0; i < data.listings.length; i++) {
+        
+        console.log(data.listings[i]);
 
         var searchTerm = '<div class="result">' +
             '<div class="row property-header">' +
               '<div class="col-xs-8">' +
-                '<span class="property-name">Twin Regency</span>' + 
-                '<span class="property-address">Jalan Membina, 098765 </span>' +  // VALUE HERE
+                '<span class="property-name">' + data.listings[i].project_name + '</span>' +
+                '<span class="property-address">' + "," + " " + data.listings[i].address + '</span>' +
               '</div>' +
-              '<div class="col-xs-2 district-code">' +
-                'District 11' +  // VALUE HERE
-              '</div>' +
+              '<div class="col-xs-2 district-code">' + data.listings[i].postal_district + '</div>' +
               '<div class="col-xs-2">' +
                 '<span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>' +
               '</div>' +
@@ -104,50 +111,31 @@ $(document).ready(function(){
             '<div class="row filterBox">' +
               '<div class="row property-listing-body">' +
                 '<div class="col-xs-6 property-picture">' +
-                'image' +  // ACTUAL PICTURE HERE
+                '<img class="condo-picture" src="' + data.listings[i].picture_url + '" />' + 
                 '</div>' +
                 '<div class="col-xs-6">' +
-                  '<p>Price: </p>' + 
-                  '<p>Size: </p>' + data[i].apartment_size +
-                  '<p>Price Per Square Foot: </p>' +  // VALUE HERE
-                  '<p>Tenure: </p>' +  // VALUE HERE
+                  '<p>Price: ' + data.listings[i].asking_price + '</p>' +
+                  '<p>Size: ' + data.listings[i].apartment_size + '</p>' +
+                  '<p>Price Per Square Foot: </p>' +
+                  '<p>Tenure: ' + data.listings[i].tenure + '</p>' +
+                  '<p>Number of Bedrooms: ' + data.listings[i].number_of_beds + '</p>' +
+                  '<p>Number of Bathrooms: ' + data.listings[i].number_of_bathrooms + '</p>' +
                 '</div>' +
               '</div>' +
             '</div>' +
           '</div>'
+
           
         $(searchTerm).appendTo("#search-results")  
 
-        // console.log(searchTerm);
-
-        console.log(data[i]);
-        
-    
-      // for (var i in data) {
-      //   console.log(i);
-      // };
-      
-      // clear the list of results: .html('')
-
-      
-      // for each element in the array, loop and APPEND to the list of results!
-        // LOOP
-        // var parsed = "";
-        // var 
-        // for (var 
-
-
-        //   var i=0; i <= data.length; i++) {
-        //   console.log(data);
-        // }
-
+        // // console.log(searchTerm);
 
         
 
-    };
+      };
 
 
-  });
+    });
 
   });
 

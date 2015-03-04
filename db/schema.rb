@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20150303033903) do
     t.string   "floor_level"
     t.decimal  "price_per_square_foot"
     t.string   "date_of_sale"
-    t.decimal  "asking_price"
+    t.integer  "asking_price"
     t.date     "posted_on"
     t.integer  "apartment_size"
     t.integer  "number_of_beds"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20150303033903) do
 
   create_table "projects", force: true do |t|
     t.string   "project_name"
-    t.string   "address"
+    t.text     "address"
     t.string   "tenure"
     t.integer  "year_constructed"
     t.string   "picture_url"
