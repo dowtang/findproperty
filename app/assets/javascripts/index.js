@@ -70,8 +70,12 @@ $(document).ready(function(){
     url += "&maxPrice=" + maxPrice;
     url += "&minFootage=" + minFootage;
     url += "&maxFootage=" + maxFootage;
-    url += "&minBedroom=" + minBedroom;
-    url += "&maxBedroom=" + maxBedroom;
+    if (minBedroom > 0) {
+      url += "&minBedroom=" + minBedroom;
+    }
+    if (maxBedroom > 0) {
+      url += "&maxBedroom=" + maxBedroom;
+    }
     if (selectedDistrict.length > 0) {
       district = selectedDistrict.val();
       url += "&district=" + district;
@@ -85,7 +89,8 @@ $(document).ready(function(){
     // do the ajax (get) request
     $.get(url, function(data) {
       var listings = data.listings;
-      console.log(data.listings);
+      // console.log(data.listings);
+      console.log('number of listings:', data.listings.length);
       // receive data in response --> will be an array
       // 
       // clear the list of results: .html('')
@@ -95,7 +100,7 @@ $(document).ready(function(){
       
       for (var i=0; i < data.listings.length; i++) {
         
-        console.log(data.listings[i]);
+        // console.log(data.listings[i]);
 
         var searchTerm = '<div class="result">' +
             '<div class="row property-header">' +
@@ -103,7 +108,7 @@ $(document).ready(function(){
                 '<span class="property-name">' + data.listings[i].project_name + '</span>' +
                 '<span class="property-address">' + "," + " " + data.listings[i].address + '</span>' +
               '</div>' +
-              '<div class="col-xs-2 district-code">' + data.listings[i].postal_district + '</div>' +
+              '<div class="col-xs-2 district-code">' + data.listings[i].district_number + '</div>' +
               '<div class="col-xs-2">' +
                 '<span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>' +
               '</div>' +
