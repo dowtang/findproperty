@@ -54,8 +54,8 @@ namespace :ten_scrape do
         year_constructed = "div.box-col640.pull-right.default-box-detail > div.row > div:nth-child(4).col-xs-6 > div:nth-child(1).row > div:nth-child(2).col-xs-7"
         yearConstructed = html_doc.css(year_constructed)
 
-        # property_picture = "div > div > a > span > img"
-        # propertyPicture = html_doc.css(property_picture)
+        property_picture = "div > div > a > span > img"
+        propertyPicture = html_doc.css(property_picture)
 
         total_beds = "div > div > div > div > span.icon-bed"
         totalBeds = html_doc.css(total_beds)
@@ -113,19 +113,20 @@ namespace :ten_scrape do
             :project_name => propertyName.text,
             :district_number => district_number,
             :tenure => paul,
-            :year_constructed => mike
-            # :picture_url => "http://www.stproperty.sg/#{propertyPicture[index].attr("data-src")}"
+            :year_constructed => mike,
+            :picture_url => "http://www.stproperty.sg/#{propertyPicture[index].attr("src")}"
           )
 
           project.listings.create(
-            :asking_price => propertyPrice[index].text,
+            :asking_price => propertyPrice[index].text.gsub("SGD","").gsub(",","").to_i,
             :posted_on => harry,
-            :apartment_size => floorArea[index].text,
+            :apartment_size => floorArea[index].text.gsub(",","").gsub("sqft","").gsub("sqm","").split("/")[0].to_i,
             :number_of_beds => clement,
             :number_of_bathrooms => dennis
           )
 
-          puts postal_code
+          puts propertyPicture[index]
+
 
         end
       end
