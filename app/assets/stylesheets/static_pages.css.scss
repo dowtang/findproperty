@@ -30,12 +30,25 @@ html, body {
   color: #2E2E2E;
 }
 
+/*.test {
+  position: fixed;
+  height: 800px;
+  top: 0;
+  transition: top 0.2s ease-in-out;
+}
+*/
+/*.nav-up {
+  top: -40px;
+}
+*/
+
 .panel.panel-default {
   border: none;
+
 }
 
 .panel-heading {
-  border: none;
+/*  border: solid 2px white;*/
 }
 
 .row.property-header {
@@ -46,9 +59,9 @@ html, body {
   padding-bottom: 7px;
   padding-right: 15px;
   padding-left: 15px;
-  border-top: solid 2px #D0D0D0;
-  border-left: solid 2px #D0D0D0;
-  border-right: solid 2px #D0D0D0;
+  border-top: solid 1px #D0D0D0;
+  border-left: solid 1px #D0D0D0;
+  border-right: solid 1px #D0D0D0;
   margin: 0px -14px 0px 0px;
   font-size: 16px;
   font-family: Arial;
@@ -62,21 +75,33 @@ html, body {
   padding-bottom: 15px;
   padding-right: 15px;
   padding-left: 15px;
-  border-bottom: solid 2px #D0D0D0;
-  border-right: solid 2px #D0D0D0;
-  border-left: solid 2px #D0D0D0;
+  border-bottom: solid 1px #D0D0D0;
+  border-right: solid 1px #D0D0D0;
+  border-left: solid 1px #D0D0D0;
   margin: 0px -14px 15px 0px;
   font-size: 14px;
 }
 
 .slider-label {
-  padding-left: 15px;
+  padding-left: 0px;
+}
+
+.price-row {
+  border-top: solid 1px #dce0e0;
+  padding-top: 20px;
+ /* display: flex;
+  align-items: center;*/
+}
+
+#district-title {
+  font-weight: bold;
 }
 
 .slider-space {
-  margin-bottom: 10px;
-  border-top: 1px solid #dce0e0;
-  border-bottom: 1px solid #dce0e0;
+  /*margin-top: 10px;
+  margin-bottom: 10px;*/
+  /*border-top: 1px solid #dce0e0;
+  border-bottom: 1px solid #dce0e0;*/
 }
 
 #number-of-beds {
@@ -114,21 +139,21 @@ html, body {
   height: 100vh;
   margin: 0px;
   padding: 0px;
-  border-radius: 10px;
-  border: solid 2px #D0D0D0;
-  
 }
 
 .col-lg-7.main-body-fixed {
   top: 0px;
+  /*height: 100%;*/
   margin-top: -24px;
 }
 
 .col-lg-5.google-map-fixed {
   position: fixed;
+  padding-left: 0px;
   top: 0px;
-  right: 0px;
-  margin-top: 75px;
+  right: -16px;
+  margin-top: 62px;
+
 }
 
 #frontpage {
@@ -162,10 +187,10 @@ html, body {
   margin-bottom: 7px;
 }
 
-.glyphicon-heart {
+/*.glyphicon-heart {
   float:left;
   color: red;
-}
+}*/
 
 .district-code {
   

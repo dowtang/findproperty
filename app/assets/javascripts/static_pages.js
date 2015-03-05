@@ -14,6 +14,16 @@ $(document).ready(function(){
       zoom: 11
     });
 
+
+  //   var image = 'images/restaurantMarker.png';
+  //   var myLatLng = new google.maps.LatLng(1.3146631, 103.8454093);
+  //   var restaurantMarker = new google.maps.Marker({
+  //     position: myLatLng,
+  //     map: map,
+  //     icon: image
+  //   });
+  // }
+
     var request = {
       location: singapore,
       radius: 8,
@@ -27,6 +37,7 @@ $(document).ready(function(){
 
     bind_controls(map);
   }
+
 
 // Goal: I must bind and setup search control for the map.param: map - the Google map object
 
@@ -124,8 +135,12 @@ var search = function(map) {
     if (status === google.maps.GeocoderStatus.OK) {
 
       // create a marker and drop it on the name on the geocoded location
+      
+      var image = 'assets/restaurantMarker.png';
       var marker = new google.maps.Marker({
+        
         animation: google.maps.Animation.DROP,
+        icon: image,
         map: map,
         position: results[0].geometry.location,
         title: name
@@ -189,7 +204,10 @@ var clearMarkers = function() {
         console.log(results[0].geometry.location);
 
         map.setCenter(results[0].geometry.location);
+        
+        var houseMark = 'assets/houseMarker.png';
         var marker = new google.maps.Marker({
+          icon: houseMark,
           map: map,
           position: results[0].geometry.location
         });
@@ -199,6 +217,8 @@ var clearMarkers = function() {
       }
     });
   }
+
+
 
   // var controlContainer = $('#geocode_submit')[0];
   // google.maps.event.addDomListener(controlContainer, 'click', function(e) {
