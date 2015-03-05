@@ -38,6 +38,7 @@ $(document).ready(function(){
     bind_controls(map);
   }
 
+
 // Goal: I must bind and setup search control for the map.param: map - the Google map object
 
 var bind_controls = function(map) {
@@ -216,6 +217,8 @@ var clearMarkers = function() {
       }
     });
   }
+
+
 
   // var controlContainer = $('#geocode_submit')[0];
   // google.maps.event.addDomListener(controlContainer, 'click', function(e) {

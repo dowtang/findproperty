@@ -30,23 +30,25 @@ html, body {
   color: #2E2E2E;
 }
 
-/*.panel-group {
+/*.test {
   position: fixed;
   height: 800px;
-  top: 70;
+  top: 0;
   transition: top 0.2s ease-in-out;
 }
 */
 /*.nav-up {
   top: -40px;
-}*/
+}
+*/
 
 .panel.panel-default {
   border: none;
+
 }
 
 .panel-heading {
-  border: none;
+/*  border: solid 2px white;*/
 }
 
 .row.property-header {
@@ -137,21 +139,21 @@ html, body {
   height: 100vh;
   margin: 0px;
   padding: 0px;
-  border-radius: 10px;
-  border: solid 2px #D0D0D0;
-  
 }
 
 .col-lg-7.main-body-fixed {
   top: 0px;
+  /*height: 100%;*/
   margin-top: -24px;
 }
 
 .col-lg-5.google-map-fixed {
   position: fixed;
+  padding-left: 0px;
   top: 0px;
-  right: 0px;
-  margin-top: 75px;
+  right: -16px;
+  margin-top: 62px;
+
 }
 
 #frontpage {

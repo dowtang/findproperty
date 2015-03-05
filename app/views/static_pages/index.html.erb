@@ -1,175 +1,173 @@
 <div class="container-fluid">
-  
   <div class="row">
     
     <!-- <div class="col-lg-7 main-body-fixed"> -->
-    <div class="col-lg-7">
+    <div class="col-lg-7 col-xs-12">
 
-        <!-- ACCORDION -->
-<!--         <div class="panel-group nav-down" id="accordion" role="tablist" aria-multiselectable="true"> -->
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-          
-          <!-- ACCORDION: PANEL 1 -->
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingOne">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Home Requirements
-                </a>
-              </h4>
-            </div>
+      <header class="nav-down">
+          <!-- ACCORDION -->
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             
-            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-              <div class="panel-body">
-                
-                <div id="district-param" class="row">
-                  <div class="col-xs-2">
-                    <p id="district-title">District:</p>
-                  </div>
-                  <!-- loop thru @district -->
-                  <div class="col-xs-10">
-                    <% @district.each do |i| %>
-                      <div class="col-xs-3">
-                        <div class="checkbox">
-                          <label>
-                            <input type="radio" value="<%= i %>" name="district">
-                            District <%= i %> 
-                          </label>
-                        </div>
-                      </div>
-                    <% end %>
-                  </div>
-                </div>
-                
-                <div class="row slider-space price-row">
-                  <div class="col-xs-2">
-                    <p>
-                      <label class="slider-label" for="amount">Price range (min-max):
-                      </label>
-                    <p>
-                  </div>
-                  <div class="col-xs-4">
-                      <input type="text" id="amount" readonly readonly style="border:0; color:#f6931f; font-weight:bold">
-                  </div>
-                  <div class="col-xs-6">
-                    <div id="slider-range">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row slider-space price-row">
-                  <div class="col-xs-2">
-                    <p>
-                      <label class="slider-label" for="amount">Square foot (min-max):
-                      </label>
-                    </p>
-                  </div>
-                  <div class="col-xs-4">
-                    <input type="text" id="amount-space" readonly style="border:0; color:#f6931f; font-weight:bold">
-                  </div>
-                  <div class="col-xs-6">
-                    <div id="slider-range-square-feet">
-                    </div>
-                  </div>
-                </div>
-
-
-                <div class="row price-row">
-                  
-                  <div class="col-xs-3">
-                    <p id="number-of-beds">Number of bedrooms:
-                    </p>
-                  </div>
-
-                  <div class="col-xs-4">
-                    
-                    <div class="col-xs-6">
-                      <select id="min-bed" class="form-control room-number">
-                        
-                        <option>Min</option>
-                        <!-- loop thru @bedrooms -->
-                        <% @bedroom.each do |i| %>
-                          <option><%= i %></option>
-                        <% end %>
-
-                    
-                      </select>
-                    </div>
-                    <div class="col-xs-6">
-                      <select id="max-bed" class="form-control room-number">
-                        
-                        <option>Max</option>
-                        <!-- loop thru @bedrooms -->
-                        <% @bedroom.each do |i| %>
-                          <option><%= i %></option>
-                        <% end %>
-
-                      </select>
-                    </div>
-                  </div>
-
-                </div>
-
-                <div>
-
-                </div>
-                
-                <div class="btn-group" role="group" aria-label="Search">
-                  <button type="button" class="btn btn-default search-button" id="search-button">Show Listings</button>
-                </div>
-                
-              </div>
-            </div>
-
-          </div>
-
-          <!-- ACCORDION: PANEL 2 -->
-          <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="headingTwo">
-              <h4 class="panel-title">
-                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Lifestyle Filter
-                </a>
-              </h4>
-            </div>
-            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-              <div class="panel-body">
-                <div class="col-xs-3">
-                  <div id="map_search">
-                    Type of Food:
-                    <input type="string">
-                  </div>
-                </div>
-                <div class="col-xs-3">
-                  <div id="radius_search">
-                    Maximum Distance:
-                    <input type="number">
-                  </div>
-                </div>
-                <div class="col-xs-3">
-                  <div id="point_of_interest_search">
-                     From:
-                    <input type="string">
-                  </div>
-                </div>
-                <div class="col-xs-3">
-                  <a href="#" id="map_search_submit">
-                    <br>
-                    <span class="glyphicon glyphicon-search">
-                    </span>
+            <!-- ACCORDION: PANEL 1 -->
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Home Requirements
                   </a>
+                </h4>
+              </div>
+              
+              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                  
+                  <div id="district-param" class="row">
+                    <div class="col-xs-2">
+                      <p id="district-title">District:</p>
+                    </div>
+                    <!-- loop thru @district -->
+                    <div class="col-xs-10">
+                      <% @district.each do |i| %>
+                        <div class="col-xs-3">
+                          <div class="checkbox">
+                            <label>
+                              <input type="radio" value="<%= i %>" name="district">
+                              District <%= i %> 
+                            </label>
+                          </div>
+                        </div>
+                      <% end %>
+                    </div>
+                  </div>
+                  
+                  <div class="row slider-space price-row">
+                    <div class="col-xs-2">
+                      <p>
+                        <label class="slider-label" for="amount">Price range (min-max):
+                        </label>
+                      <p>
+                    </div>
+                    <div class="col-xs-4">
+                      <input type="text" id="amount" readonly readonly style="border:0; color:#f6931f; font-weight:bold">
+                    </div>
+                    <div class="col-xs-6">
+                      <div id="slider-range">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row slider-space price-row">
+                    <div class="col-xs-2">
+                      <p>
+                        <label class="slider-label" for="amount">Square foot (min-max):
+                        </label>
+                      </p>
+                    </div>
+                    <div class="col-xs-4">
+                      <input type="text" id="amount-space" readonly style="border:0; color:#f6931f; font-weight:bold">
+                    </div>
+                    <div class="col-xs-6">
+                      <div id="slider-range-square-feet">
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="row price-row">
+                    
+                    <div class="col-xs-3">
+                      <p id="number-of-beds">Number of bedrooms:
+                      </p>
+                    </div>
+
+                    <div class="col-xs-4">
+                      
+                      <div class="col-xs-6">
+                        <select id="min-bed" class="form-control room-number">
+                          
+                          <option>Min</option>
+                          <!-- loop thru @bedrooms -->
+                          <% @bedroom.each do |i| %>
+                            <option><%= i %></option>
+                          <% end %>
+
+                      
+                        </select>
+                      </div>
+                      <div class="col-xs-6">
+                        <select id="max-bed" class="form-control room-number">
+                          
+                          <option>Max</option>
+                          <!-- loop thru @bedrooms -->
+                          <% @bedroom.each do |i| %>
+                            <option><%= i %></option>
+                          <% end %>
+
+                        </select>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <div>
+
+                  </div>
+                  
+                  <div class="btn-group" role="group" aria-label="Search">
+                    <button type="button" class="btn btn-default search-button" id="search-button">Show Listings</button>
+                  </div>
+                  
                 </div>
               </div>
             </div>
+
+            <!-- ACCORDION: PANEL 2 -->
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingTwo">
+                <h4 class="panel-title">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Lifestyle Filter
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="panel-body">
+                  <div class="col-xs-3">
+                    <div id="map_search">
+                      Type of Food:
+                      <input type="string">
+                    </div>
+                  </div>
+                  <div class="col-xs-3">
+                    <div id="radius_search">
+                      Maximum Distance:
+                      <input type="number">
+                    </div>
+                  </div>
+                  <div class="col-xs-3">
+                    <div id="point_of_interest_search">
+                       From:
+                      <input type="string">
+                    </div>
+                  </div>
+                  <div class="col-xs-3">
+                    <a href="#" id="map_search_submit">
+                      <br>
+                      <span class="glyphicon glyphicon-search">
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
-        </div>
+      </header>
 
-        <!-- RESULTS -->
-
-        <div id="search-results">
-          <!-- Here will go the search results -->
-        </div>
+      <div id="search-results">
+        <!-- Here will go the search results -->
+      </div>
 
     </div>
 
