@@ -6,6 +6,7 @@
     <div class="col-lg-7">
 
         <!-- ACCORDION -->
+<!--         <div class="panel-group nav-down" id="accordion" role="tablist" aria-multiselectable="true"> -->
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
           
           <!-- ACCORDION: PANEL 1 -->
@@ -22,61 +23,90 @@
               <div class="panel-body">
                 
                 <div id="district-param" class="row">
-
+                  <div class="col-xs-2">
+                    <p id="district-title">District:</p>
+                  </div>
                   <!-- loop thru @district -->
-                  <% @district.each do |i| %>
-                    <div class="col-xs-3">
-                      <div class="checkbox">
-                        <label>
-                          <input type="radio" value="<%= i %>" name="district">
-                          District <%= i %> 
-                        </label>
+                  <div class="col-xs-10">
+                    <% @district.each do |i| %>
+                      <div class="col-xs-3">
+                        <div class="checkbox">
+                          <label>
+                            <input type="radio" value="<%= i %>" name="district">
+                            District <%= i %> 
+                          </label>
+                        </div>
                       </div>
-                    </div>
-                  <% end %>
-
+                    <% end %>
+                  </div>
                 </div>
                 
-                <div class="slider-space">
-                  <p>
-                    <label class="slider-label" for="amount">Price range (min-max):
-                    </label>
-                    <input type="text" id="amount" readonly readonly style="border:0; color:#f6931f; font-weight:bold">
-                  </p>
-                  <div id="slider-range">
+                <div class="row slider-space price-row">
+                  <div class="col-xs-2">
+                    <p>
+                      <label class="slider-label" for="amount">Price range (min-max):
+                      </label>
+                    <p>
+                  </div>
+                  <div class="col-xs-4">
+                      <input type="text" id="amount" readonly readonly style="border:0; color:#f6931f; font-weight:bold">
+                  </div>
+                  <div class="col-xs-6">
+                    <div id="slider-range">
+                    </div>
                   </div>
                 </div>
 
-                <div class="slider-space">
-                  <p>
-                    <label class="slider-label" for="amount">Square foot (min-max):
-                    </label>
+                <div class="row slider-space price-row">
+                  <div class="col-xs-2">
+                    <p>
+                      <label class="slider-label" for="amount">Square foot (min-max):
+                      </label>
+                    </p>
+                  </div>
+                  <div class="col-xs-4">
                     <input type="text" id="amount-space" readonly style="border:0; color:#f6931f; font-weight:bold">
-                  </p>
-                  <div id="slider-range-square-feet">
+                  </div>
+                  <div class="col-xs-6">
+                    <div id="slider-range-square-feet">
+                    </div>
                   </div>
                 </div>
 
-                <div>
-                  <p id="number-of-beds">Number of bedrooms:</p>
-                  <select id="min-bed" class="form-control room-number">
-                    
-                    <option>Min</option>
-                    <!-- loop thru @bedrooms -->
-                    <% @bedroom.each do |i| %>
-                      <option><%= i %></option>
-                    <% end %>
 
-                  </select>
-                  <select id="max-bed" class="form-control room-number">
-                    
-                    <option>Max</option>
-                    <!-- loop thru @bedrooms -->
-                    <% @bedroom.each do |i| %>
-                      <option><%= i %></option>
-                    <% end %>
+                <div class="row price-row">
+                  
+                  <div class="col-xs-3">
+                    <p id="number-of-beds">Number of bedrooms:
+                    </p>
+                  </div>
 
-                  </select>
+                  <div class="col-xs-4">
+                    
+                    <div class="col-xs-6">
+                      <select id="min-bed" class="form-control room-number">
+                        
+                        <option>Min</option>
+                        <!-- loop thru @bedrooms -->
+                        <% @bedroom.each do |i| %>
+                          <option><%= i %></option>
+                        <% end %>
+
+                    
+                      </select>
+                    </div>
+                    <div class="col-xs-6">
+                      <select id="max-bed" class="form-control room-number">
+                        
+                        <option>Max</option>
+                        <!-- loop thru @bedrooms -->
+                        <% @bedroom.each do |i| %>
+                          <option><%= i %></option>
+                        <% end %>
+
+                      </select>
+                    </div>
+                  </div>
 
                 </div>
 

@@ -119,8 +119,8 @@ $(document).ready(function(){
                 '<img class="condo-picture" src="' + data.listings[i].picture_url + '" />' + 
                 '</div>' +
                 '<div class="col-xs-6">' +
-                  '<p>Price: ' + data.listings[i].asking_price + '</p>' +
-                  '<p>Size: ' + data.listings[i].apartment_size + '</p>' +
+                  '<p>Price: ' + "$" + data.listings[i].asking_price + '</p>' +
+                  '<p>Size: ' + data.listings[i].apartment_size + " " + "square feet" + '</p>' +
                   '<p>Price Per Square Foot: </p>' +
                   '<p>Tenure: ' + data.listings[i].tenure + '</p>' +
                   '<p>Number of Bedrooms: ' + data.listings[i].number_of_beds + '</p>' +
